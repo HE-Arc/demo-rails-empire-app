@@ -2,7 +2,7 @@ class TroopersController < ApplicationController
   before_action :set_trooper, only: [:show]
 
   def index
-    @troopers = Trooper.all
+    @troopers = Trooper.all.includes(:category)
   end
 
   def new
