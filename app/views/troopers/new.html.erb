@@ -1,6 +1,13 @@
 <h1>Register new trooper</h1>
 
 <%= form_for(@trooper) do |f| %>
+
+    <% if @trooper.errors.any? %>
+        <% @trooper.errors.full_messages.each do |message| %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% end %>
+    <% end %>
+
     <div class="form-group">
         <%= f.label :name %>
         <%= f.text_field :name, :class => "form-control" %>
