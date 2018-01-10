@@ -1,0 +1,20 @@
+<h1>Trooper details</h1>
+
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <th scope="row">Name</th>
+            <td><%= @trooper.name %></td>
+        </tr>
+        <tr>
+            <th scope="row">Age</th>
+            <td><%= @trooper.age %></td>
+        </tr>
+         <tr>
+            <th scope="row">Strength</th>
+            <td><%= @trooper.strength %></td>
+        </tr>
+    </tbody>
+</table>
+
+<%= link_to 'Back', troopers_path, :class => "btn btn-danger btn-sm" %>

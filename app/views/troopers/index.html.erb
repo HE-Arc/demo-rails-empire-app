@@ -13,6 +13,7 @@
                 <th>Name</th>
                 <th>Age</th>
                 <th>Strength</th>
+                <th>&nbsp;</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
                     <td><%= trooper.name %></td>
                     <td><%= trooper.age %></td>
                     <td><%= trooper.strength %></td>
+                    <th class="text-right"><%= link_to 'Details', trooper_path(trooper), :class => "btn btn-primary btn-sm" %></th>
                 </tr>
             <% end %>
         </tbody>

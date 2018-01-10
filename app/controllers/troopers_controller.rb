@@ -1,4 +1,6 @@
 class TroopersController < ApplicationController
+  before_action :set_trooper, only: [:show]
+
   def index
     @troopers = Trooper.all
   end
@@ -16,9 +18,16 @@ class TroopersController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def trooper_params()
       params.require(:trooper).permit(:name, :age, :strength)
+    end
+
+    def set_trooper
+      @trooper = Trooper.find(params[:id])
     end
 end
