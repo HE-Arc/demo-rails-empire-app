@@ -18,9 +18,15 @@
               <%= link_to 'Troopers', troopers_path, :class => "nav-link" %>
             </li>
           </ul>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <%= link_to 'Index', root_path, :class => "nav-link" %>
+            </li>
+          </ul>
         </nav>
         <h3>Empire Mangement System</h3>
       </header>
+      
 
       <% if flash[:notice] %>
         <div class="alert alert-info">

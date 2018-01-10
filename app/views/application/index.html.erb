@@ -1,0 +1,25 @@
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbotron text-center">
+            <h1>You have <div class="badge badge-primary"><%= Trooper.all.count %></div> troopers at your order</h1>
+            <hr>
+            <%= link_to 'Register one more !', new_trooper_path, :class => "btn btn-lg btn-success" %>
+        </div>
+    </div>
+    <div class="col-md-6">
+
+
+        <div class="jumbotron text-center">
+            <% if @sith_of_the_day.nil? %>
+                <p>Sadly no Sith is registerd</p>
+            <% else %>
+                <h4 class="card-title"><b><%= @sith_of_the_day.name %></b> is the Sith of the Day !</h4>
+                <p class="card-text">He is only <%= @sith_of_the_day.age %> years old, have a great strength of <%= @sith_of_the_day.strength %> and want to meet you !</p>
+                <%= link_to 'Details', trooper_path(@sith_of_the_day), :class => "btn btn-primary btn-sm" %>
+            <% end %>
+        </div>
+        
+    </div>
+</div>
