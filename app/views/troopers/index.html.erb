@@ -1,5 +1,8 @@
 <h1>Troopers</h1>
 
+<%= link_to 'Register new trooper', new_trooper_path, :class => "btn btn-primary btn-sm" %>
+
+<hr>
 <% if @troopers.empty? %>
     <p>No trooper for now</p>
 <% else %>

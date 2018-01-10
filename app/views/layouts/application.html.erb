@@ -9,6 +9,27 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="container">
+      <header class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <%= link_to 'Troopers', troopers_path, :class => "nav-link" %>
+            </li>
+          </ul>
+        </nav>
+        <h3>Empire Mangement System</h3>
+      </header>
+
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
   </body>
 </html>
