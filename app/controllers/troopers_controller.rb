@@ -24,7 +24,7 @@ class TroopersController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def trooper_params()
-      params.require(:trooper).permit(:name, :age, :strength)
+      params.require(:trooper).permit(:name, :age, :strength, :category_id)
     end
 
     def set_trooper

@@ -1,4 +1,4 @@
-<h1>Trooper details</h1>
+<h1><%= @trooper.category.name %> details</h1>
 
 <table class="table table-striped">
     <tbody>
@@ -10,10 +10,16 @@
             <th scope="row">Age</th>
             <td><%= @trooper.age %></td>
         </tr>
-         <tr>
+        <tr>
             <th scope="row">Strength</th>
             <td><%= @trooper.strength %></td>
         </tr>
+
+         <tr>
+            <th scope="row">Category</th>
+            <td><span class="badge badge-primary"><%= @trooper.category.name %></span> <br> <%= @trooper.category.description %></td>
+        </tr>
+       
     </tbody>
 </table>
 

@@ -11,6 +11,7 @@
             <tr>
                 <th>#</th>
                 <th>Name</th>
+                <th>Type</th>
                 <th>Age</th>
                 <th>Strength</th>
                 <th>&nbsp;</th>
@@ -21,6 +22,7 @@
                 <tr>
                     <th scope="row"><%= trooper.id %></th>
                     <td><%= trooper.name %></td>
+                    <td><span class="badge badge-primary"><%= trooper.category.name %></span></td>
                     <td><%= trooper.age %></td>
                     <td><%= trooper.strength %></td>
                     <th class="text-right"><%= link_to 'Details', trooper_path(trooper), :class => "btn btn-primary btn-sm" %></th>
