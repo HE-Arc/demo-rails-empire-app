@@ -1,30 +1,6 @@
 <h1>Register new trooper</h1>
 
-<%= form_for(@trooper) do |f| %>
-
-    <% if @trooper.errors.any? %>
-        <% @trooper.errors.full_messages.each do |message| %>
-            <div class="alert alert-danger"><%= message %></div>
-        <% end %>
-    <% end %>
-
-    <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, :class => "form-control" %>
-    </div>
-    <div class="form-group">
-        <%= f.label :age %>
-        <%= f.number_field :age, step: 1, :class => "form-control" %>
-    </div>
-    <div class="form-group">
-        <%= f.label :strength %>
-        <%= f.number_field :strength, in: 0..10, step: 1, :class => "form-control" %>
-    </div>
-    <div class="actions">
-        <%= f.submit "Validate", :class => "btn btn-primary btn-block" %>
-    </div>
-
-<% end %>
+<%= render 'form', trooper: @trooper %>
 
 <hr>
 
