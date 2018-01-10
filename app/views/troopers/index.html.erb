@@ -1,0 +1,27 @@
+<h1>Troopers</h1>
+
+<% if @troopers.empty? %>
+    <p>No trooper for now</p>
+<% else %>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Strength</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @troopers.each do |trooper| %>
+                <tr>
+                    <th scope="row"><%= trooper.id %></th>
+                    <td><%= trooper.name %></td>
+                    <td><%= trooper.age %></td>
+                    <td><%= trooper.strength %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% end %>
+
