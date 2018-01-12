@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-6">
         <div class="jumbotron text-center">
-            <h1>You have <div class="badge badge-primary"><%= Trooper.all.count %></div> troopers at your order</h1>
+            <h1>You have <div class="badge badge-primary"><%= Trooper.alive.count %></div> troopers at your order</h1>
             <hr>
             <%= link_to 'Register one more !', new_trooper_path, :class => "btn btn-lg btn-success" %>
         </div>
@@ -25,11 +25,19 @@
 
 
 <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Alive</th>
+            <th>Dead on the field</th>
+        </tr>
+    </thead>
     <tbody>
         <% @categories.each do |category| %>
             <tr>
                 <th scope="row"><%= category.name %></th>
-                <td><%= category.trooper.count() %></td>
+                <td><%= category.trooper.alive.count() %></td>
+                <td><%= category.trooper.dead.count() %></td>
             </tr>
         <% end %>
        

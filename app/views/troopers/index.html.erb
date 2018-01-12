@@ -19,13 +19,18 @@
         </thead>
         <tbody>
             <% @troopers.each do |trooper| %>
-                <tr>
+                <tr <%= (!trooper.alive) ? 'class=trooper-dead': "" %>>
                     <th scope="row"><%= trooper.id %></th>
                     <td><%= trooper.name %></td>
                     <td><span class="badge badge-primary"><%= trooper.category.name %></span></td>
                     <td><%= trooper.age %></td>
                     <td><%= trooper.strength %></td>
-                    <th class="text-right"><%= link_to 'Details', trooper_path(trooper), :class => "btn btn-primary btn-sm" %></th>
+                    <th class="text-right">
+                        <% if trooper.alive %>
+                            <%= link_to "Dead on the field", kill_trooper_path(trooper), method: :patch, :class => "btn btn-danger btn-sm" %>
+                        <% end %>
+                        <%= link_to 'Details', trooper_path(trooper), :class => "btn btn-primary btn-sm" %>
+                    </th>
                 </tr>
             <% end %>
         </tbody>
