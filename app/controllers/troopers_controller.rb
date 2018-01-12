@@ -2,7 +2,7 @@ class TroopersController < ApplicationController
   before_action :set_trooper, only: [:show, :kill]
 
   def index
-    @troopers = Trooper.all.includes(:category)
+    @troopers = Trooper.all.includes(:category).order("categories.name ASC, alive DESC, troopers.name ASC")
   end
 
   def new
