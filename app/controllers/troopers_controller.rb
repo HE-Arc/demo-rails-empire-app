@@ -1,5 +1,5 @@
 class TroopersController < ApplicationController
-  before_action :set_trooper, only: [:show]
+  before_action :set_trooper, only: [:show, :kill]
 
   def index
     @troopers = Trooper.all.includes(:category)
@@ -19,6 +19,11 @@ class TroopersController < ApplicationController
   end
 
   def show
+  end
+
+  def kill
+    @trooper.update!(alive: false)
+    redirect_to troopers_path, notice: @trooper.name + ': It was an honor to serve you'
   end
 
   private
