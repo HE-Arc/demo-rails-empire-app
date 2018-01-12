@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   def index
     @sith_of_the_day = Category.find_by(:name => 'Sith').trooper_of_the_day
+    @categories = Category.all.includes(:trooper)
   end
 
 end
