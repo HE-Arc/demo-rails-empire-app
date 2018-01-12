@@ -12,4 +12,12 @@ class Trooper < ApplicationRecord
     validates :strength,
         numericality: { greater_than: 0, less_than_or_equal_to: 10 },
         presence: true
+
+    def self.alive
+        self.where(alive: true)
+    end
+    
+    def self.dead
+        self.where(alive: false)
+    end
 end
